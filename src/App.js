@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
 import Login from "./components/Login";
@@ -7,34 +9,29 @@ import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
 import GameCatalog from "./components/GameCatalog";
 function App() {
+  const [page,setPage]=useState('/home')
+  const routers={
+    '/home':<WelcomeWorld/>,
+    '/games':<GameCatalog/>,
+    '/create-game':<CreateGame/>,
+
+  }
+
+  const navigationChangeHandler=(path)=>{
+   setPage(path)
+  }
   return (
     <div >
       <div id="box" />
 
-      <Header />
+      <Header navigationChangeHandler={navigationChangeHandler} />
 
 
       <main id="main-content">
+       { routers[page] || <h2>No Page Found</h2> }
       </main>
 
-      <WelcomeWorld />
-
-
-      <Login />
-
-
-      <Register />
-
-
-      <CreateGame />
-
-      <EditGame />
-
-
-      <GameDetails />
-
-    <GameCatalog/>
-
+    
 
     </div>
 
