@@ -3,7 +3,7 @@ import React from 'react'
 export default function CreateGame() {
   return (
     <section id="create-page" className="auth">
-        <htmlForm id="create">
+        <htmlform id="create">
           <div className="container">
 
             <h1>Create Game</h1>
@@ -23,7 +23,7 @@ export default function CreateGame() {
             <textarea name="summary" id="summary"></textarea>
             <input className="btn submit" type="submit" />
           </div>
-        </htmlForm>
+        </htmlform>
       </section>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function GameDetails() {
+export default function GameDetails({id}) {
   return (
     <section id="game-details">
         <h1>Game Details</h1>
@@ -41,10 +41,10 @@ export default function GameDetails() {
 
         <article className="create-comment">
           <label>Add new comment:</label>
-          <htmlForm className="htmlForm">
+          <htmlform className="htmlForm">
             <textarea name="comment" placeholder="Comment......"></textarea>
             <input className="btn submit" type="submit" value="Add Comment" />
-          </htmlForm>
+          </htmlform>
         </article>
 
       </section>

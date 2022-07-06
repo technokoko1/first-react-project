@@ -1,14 +1,13 @@
 import React from 'react'
 import { useEffect ,useState} from 'react'
 import GameCard from './GameCard'
-
-export default function GameCatalog() {
+import {GetAll} from '../../services/gameService'
+export default function GameCatalog({navigationChangeHandler}) {
    
   const [games,setGames]=useState([])
    
       useEffect(()=>{
-        fetch('http://localhost:3030/data/games?sortBy=_createdOn%20desc')
-        .then(res=>res.json())
+        GetAll()
         .then(result=>{
           setGames(result)
         })
@@ -17,9 +16,12 @@ export default function GameCatalog() {
     <section id="catalog-page">
     <h1>All Games</h1>
    
-      {games.map(x=><GameCard game={x}/>)}
+      {games.length>0
+      ?games.map(x=><GameCard key={x._id} game={x} navigationChangeHandler={navigationChangeHandler}/>)
+      : <h3 className="no-articles">No Games yet</h3>
+      }
 
-    <h3 className="no-articles">No Games yet</h3>
+   
   </section>
   )
 }

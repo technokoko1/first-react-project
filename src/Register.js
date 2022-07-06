@@ -3,7 +3,7 @@ import React from 'react'
 export default function Register() {
   return (
     <section id="register-page" className="content auth">
-        <htmlForm id="register">
+        <htmlform id="register">
           <div className="container">
             <div className="brand-logo"></div>
             <h1>Register</h1>
@@ -23,7 +23,7 @@ export default function Register() {
               <span>If you already have profile click <a href="#">here</a></span>
             </p>
           </div>
-        </htmlForm>
+        </htmlform>
       </section>
   )
 }
