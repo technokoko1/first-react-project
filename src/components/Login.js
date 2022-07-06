@@ -3,7 +3,7 @@ import React from 'react'
 export default function Login() {
   return (
     <section id="login-page" className="auth">
-    <htmlForm id="login">
+    <form id="login">
 
       <div className="container">
         <div className="brand-logo"></div>
@@ -18,7 +18,7 @@ export default function Login() {
           <span>If you don't have profile click <a href="#">here</a></span>
         </p>
       </div>
-    </htmlForm>
+    </form>
   </section>
 
   )

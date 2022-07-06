@@ -7,13 +7,17 @@ import Register from "./Register";
 import CreateGame from "./components/CreateGame";
 import EditGame from "./components/EditGame";
 import GameDetails from "./components/GameDetails";
-import GameCatalog from "./components/GameCatalog";
+import GameCatalog from "./components/GameCatalog/GameCatalog";
+import ErrorPage from "./components/ErrorPage";
 function App() {
   const [page,setPage]=useState('/home')
   const routers={
     '/home':<WelcomeWorld/>,
     '/games':<GameCatalog/>,
     '/create-game':<CreateGame/>,
+    '/login':<Login/>,
+    '/register':<Register/>,
+
 
   }
 
@@ -28,7 +32,7 @@ function App() {
 
 
       <main id="main-content">
-       { routers[page] || <h2>No Page Found</h2> }
+       { routers[page] || <ErrorPage/> }
       </main>
 
     
